@@ -42,3 +42,5 @@ print("Debug Output\n");
         <label for="md5-input"><input id="md5-input" type="text" name="md5" placeholder="Enter MD5-Hash" size="40"></label>        
         <button type="submit">Submit</button>
     </form> 
+</body>
+</html>
