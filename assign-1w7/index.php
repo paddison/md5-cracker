@@ -8,7 +8,9 @@
     <h1>MD5 cracker</h1>
     <p>This application takes an MD5 hash of a four digit pin and check all 10,000 possible four digit PINs to determine the PIN.</p>
     <pre><?php
+$oldsubmit = $_GET["md5"]?? "";
 if (isset($_GET["md5"])) {
+
 print("Debug Output\n");
     $startTime = microtime(true);
     $c = 0;
@@ -32,15 +34,13 @@ print("Debug Output\n");
 <p>
 <?php 
     if (isset($pinFound)){
-        print "</pre><p>Pin is: ".$pinFound."</p>";    
+        print "Pin is: ".$pinFound."";    
     }else {
-        print "</pre><p>No Pin Found</p>";
+        print "No Pin Found";
     }
 ?>    
 </p>    
     <form name="MD5-input" method="get">
-        <label for="md5-input"><input id="md5-input" type="text" name="md5" placeholder="Enter MD5-Hash" size="40"></label>        
+        <label for="md5-input"><input id="md5-input" type="text" name="md5" placeholder="Enter MD5-Hash" size="40" value="<?= htmlentities($oldsubmit)?>"></label>        
         <button type="submit">Submit</button>
     </form> 
-</body>
-</html>
